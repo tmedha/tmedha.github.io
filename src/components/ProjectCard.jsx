@@ -18,6 +18,11 @@ function ProjectCard({ project }) {
 
       <div className="flex flex-1 flex-col items-center gap-2 p-5 text-center">
         <h2 className="text-lg font-semibold text-slate-900">{project.name}</h2>
+        {project.tech && (
+          <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+            {project.tech}
+          </p>
+        )}
         <a
           href={project.repo}
           target="_blank"

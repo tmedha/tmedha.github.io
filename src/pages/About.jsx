@@ -54,10 +54,9 @@ const SparkleIcon = () => (
   </svg>
 )
 
-// TODO: edit these quick stats with your own numbers.
 const stats = [
-  { icon: TrophyIcon, title: 'Experience', subtitle: '3+ Years Working' },
-  { icon: FolderIcon, title: 'Projects', subtitle: '20+ Completed' },
+  { icon: TrophyIcon, title: 'Experience', subtitle: '3+ Years' },
+  { icon: FolderIcon, title: 'Projects', subtitle: '3 Featured' },
 ]
 
 function SectionHeading({ children }) {
@@ -84,6 +83,9 @@ function About() {
           <h1 className="text-4xl font-bold tracking-tight drop-shadow-sm sm:text-5xl">
             Hi, I'm Medha
           </h1>
+          <p className="mt-2 text-lg font-medium text-sky-300">
+            Software Engineer
+          </p>
 
           {/* Quick stat cards */}
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -99,12 +101,12 @@ function About() {
             ))}
           </div>
 
-          {/* TODO: replace this with your own bio */}
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-50/90">
-            I'm a developer who loves building clean, thoughtful software. This
-            is a short placeholder bio — swap it out with a paragraph about who
-            you are, what you work on, and what you're excited about. Keep it
-            warm and concise, and let your projects do the rest of the talking.
+            I'm a Software Engineer with a strong foundation in programming, web
+            development, cloud technologies, and software deployment. I love
+            building practical applications — integrating APIs, managing
+            databases, and solving technical problems across both frontend and
+            backend systems.
           </p>
         </div>
       </section>
@@ -121,18 +123,11 @@ function About() {
               <h3 className="mb-6 text-center text-xl font-bold text-sky-300">
                 {group.category}
               </h3>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-5">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-4">
                 {group.items.map((skill) => (
-                  <div key={skill.name} className="flex items-start gap-2">
+                  <div key={skill} className="flex items-center gap-2">
                     <SparkleIcon />
-                    <div>
-                      <div className="font-semibold text-white">
-                        {skill.name}
-                      </div>
-                      <div className="text-sm text-slate-400">
-                        {skill.level}
-                      </div>
-                    </div>
+                    <span className="font-medium text-white">{skill}</span>
                   </div>
                 ))}
               </div>

@@ -1,29 +1,18 @@
-// TODO: edit this list with your real experience.
-//  - role:        your job title
-//  - company:     company / organization name
-//  - period:      date range, e.g. 'Jan 2024 — Present'
-//  - description: a short blurb about what you did / achieved
+// Work experience (pulled from resume).
 const experience = [
   {
-    role: 'Software Engineer',
-    company: 'Company Name',
-    period: '2024 — Present',
+    role: 'Technical Tutor',
+    company: 'Varsity Tutors',
+    period: 'Oct 2023 — May 2026 · Remote',
     description:
-      'Placeholder description — summarize your main responsibilities and a standout achievement or two. Keep it to a sentence or two.',
+      'Mentored over 120 graduate and high school students in computer science fundamentals and programming — guiding them through logic building, algorithm design, and system debugging. Translated complex concepts into clear, approachable lessons and built customized coding exercises to develop practical software skills.',
   },
   {
-    role: 'Software Engineering Intern',
-    company: 'Previous Company',
-    period: 'Summer 2023',
+    role: 'Software Engineer Intern',
+    company: 'Aeromatrix',
+    period: 'Jan 2021 — Mar 2022 · Uttar Pradesh, India',
     description:
-      'Placeholder description — what you built, the tech you used, and the impact it had.',
-  },
-  {
-    role: 'Teaching Assistant',
-    company: 'University Name',
-    period: '2022 — 2023',
-    description:
-      'Placeholder description — courses you supported and what you helped students accomplish.',
+      "Built the frontend (HTML/CSS) and PHP backend of the startup's e-commerce platform. Hosted the website on AWS and managed the company's inventory database of 250+ daily listings, integrating the PHP application with MySQL for persistent storage.",
   },
 ]
 

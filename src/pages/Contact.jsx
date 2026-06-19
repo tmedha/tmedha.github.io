@@ -1,9 +1,8 @@
-// TODO: update these with your own details.
 const contacts = [
   {
     label: 'Email',
-    value: 'me@tmedha.com',
-    href: 'mailto:me@tmedha.com',
+    value: 'tmedha504@gmail.com',
+    href: 'mailto:tmedha504@gmail.com',
     icon: (
       <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.06-.31 7.69 5.13 7.69-5.13a.75.75 0 0 0-.69-.44h-14a.75.75 0 0 0-.69.44Zm15.44 1.5-7.27 4.85a.75.75 0 0 1-.83 0L4.38 7.94v9.31c0 .41.34.75.75.75h14.74c.41 0 .75-.34.75-.75V7.94Z" />
     ),
@@ -22,8 +21,8 @@ const contacts = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/your-handle',
-    href: 'https://www.linkedin.com/in/your-handle', // TODO: your LinkedIn URL
+    value: 'linkedin.com/in/medha-tripathi23',
+    href: 'https://www.linkedin.com/in/medha-tripathi23/',
     icon: (
       <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.83v1.64h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.74V21h-4v-5.66c0-1.35-.03-3.09-1.99-3.09-1.99 0-2.29 1.46-2.29 2.98V21H9V9Z" />
     ),

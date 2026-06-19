@@ -1,39 +1,46 @@
-// TODO: edit these skill groups with your own skills and proficiency levels.
-//  - category: the group heading
-//  - items:    list of { name, level } — level is a short label like
-//              'Experienced' or 'Intermediate'
+// Skills grouped by category (pulled from resume).
 const skills = [
   {
-    category: 'Frontend Development',
+    category: 'Languages',
     items: [
-      { name: 'HTML & CSS', level: 'Experienced' },
-      { name: 'JavaScript', level: 'Experienced' },
-      { name: 'React', level: 'Experienced' },
-      { name: 'Tailwind', level: 'Experienced' },
-      { name: 'jQuery', level: 'Intermediate' },
-      { name: 'Bootstrap', level: 'Experienced' },
+      'Python',
+      'Java',
+      'JavaScript',
+      'C',
+      'Ruby',
+      'PHP',
+      'Go',
+      'Rust',
+      'HTML',
+      'CSS',
+      'MySQL',
+      'MATLAB',
     ],
   },
   {
-    category: 'Backend Development',
+    category: 'Frameworks',
     items: [
-      { name: 'Node.js', level: 'Experienced' },
-      { name: 'Express.js', level: 'Experienced' },
-      { name: 'MongoDB', level: 'Intermediate' },
-      { name: 'REST APIs', level: 'Experienced' },
-      { name: 'MySQL', level: 'Experienced' },
-      { name: 'Firebase', level: 'Experienced' },
+      'Flask',
+      'Django',
+      'FastAPI',
+      'React',
+      'Angular',
+      'Ruby on Rails',
+      'PyTorch',
     ],
   },
   {
     category: 'Tools & Technologies',
     items: [
-      { name: 'Git', level: 'Intermediate' },
-      { name: 'Docker', level: 'Experienced' },
-      { name: 'Postman', level: 'Experienced' },
-      { name: 'AWS', level: 'Experienced' },
-      { name: 'Linux', level: 'Experienced' },
-      { name: 'Heroku', level: 'Experienced' },
+      'Git',
+      'Docker',
+      'AWS EC2',
+      'Google Cloud',
+      'Linux',
+      'Figma',
+      'VS Code',
+      'VirtualBox',
+      'LLM Agents',
     ],
   },
 ]

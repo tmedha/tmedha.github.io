@@ -1,25 +1,31 @@
-// TODO: edit this list with your real projects.
+// Projects (pulled from resume).
 //  - name:  display name of the project
+//  - tech:  short tech-stack label
 //  - image: path under /public (or a full URL). Uses the project placeholder
-//           by default — drop your own image in /public and point to it.
-//  - repo:  full URL to the GitHub repository
+//           by default — drop a screenshot in /public and point to it.
+//  - repo:  full URL to the GitHub repository.
+//           TODO: these point to the GitHub profile — swap in each project's
+//           exact repository URL once available.
 const base = import.meta.env.BASE_URL
 
 const projects = [
   {
-    name: 'Project One',
+    name: 'Manobal',
+    tech: 'Python · Cryptography · Docker',
     image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha/Portfolio',
+    repo: 'https://github.com/tmedha',
   },
   {
-    name: 'Project Two',
+    name: 'location2time',
+    tech: 'Python · REST API Integration',
     image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha/Portfolio',
+    repo: 'https://github.com/tmedha',
   },
   {
-    name: 'Project Three',
+    name: 'Search Engine',
+    tech: 'Python · BeautifulSoup · Flask',
     image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha/Portfolio',
+    repo: 'https://github.com/tmedha',
   },
 ]
 
