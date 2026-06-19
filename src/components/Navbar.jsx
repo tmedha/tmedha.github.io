@@ -12,7 +12,7 @@ const linkInactive = 'text-white/60 hover:text-white/90'
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-white/5 shadow-lg shadow-black/20 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl flex-wrap justify-center gap-8 px-6 py-5">
         {links.map(({ to, label, end }) => (
           <NavLink
