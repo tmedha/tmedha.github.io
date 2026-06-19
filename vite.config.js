@@ -4,8 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Published at https://tmedha.github.io/Portfolio — assets must resolve
-  // under the /Portfolio/ sub-path on GitHub Pages.
-  base: '/Portfolio/',
-  plugins: [react(), tailwindcss()],
+    base: '/',
+    plugins: [react(), tailwindcss()],
 })
