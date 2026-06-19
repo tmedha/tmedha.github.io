@@ -6,26 +6,42 @@ const links = [
   { to: '/contact', label: 'Contact Me' },
 ]
 
+// Shared base styles so the external Resume link matches the route links.
+const linkBase = 'text-lg font-semibold tracking-wide transition-opacity'
+const linkInactive = 'text-white/60 hover:text-white/90'
+
 function Navbar() {
   return (
     <header className="sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-5xl justify-center gap-8 px-6 py-5">
+      <nav className="mx-auto flex max-w-5xl flex-wrap justify-center gap-8 px-6 py-5">
         {links.map(({ to, label, end }) => (
           <NavLink
             key={to}
             to={to}
             end={end}
             className={({ isActive }) =>
-              `text-lg font-semibold tracking-wide transition-opacity ${
+              `${linkBase} ${
                 isActive
                   ? 'text-white underline decoration-sky-400 decoration-2 underline-offset-8'
-                  : 'text-white/60 hover:text-white/90'
+                  : linkInactive
               }`
             }
           >
             {label}
           </NavLink>
         ))}
+
+        {/* Resume opens the PDF in a new tab. TODO: drop your resume file at
+            public/resume.pdf (it will be served at /resume.pdf). */}
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          download="Medha_Resume.pdf"
+          rel="noopener noreferrer"
+          className={`${linkBase} ${linkInactive}`}
+        >
+          Resume
+        </a>
       </nav>
     </header>
   )
