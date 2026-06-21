@@ -1,20 +1,9 @@
 import skills from '../data/skills.js'
 import experience from '../data/experience.js'
-import recommendations from '../data/recommendations.js'
 
 // Assets in public/ must be prefixed with the Vite base URL so they resolve
 // under the /Portfolio/ sub-path on GitHub Pages.
 const profilePhoto = `${import.meta.env.BASE_URL}myself.jpeg`
-
-// Build initials (e.g. "Jane Doe" -> "JD") for recommendation avatars.
-function initials(name) {
-  return name
-    .split(' ')
-    .map((word) => word[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase()
-}
 
 // --- Stat-card icons (Heroicons outline) ---
 const iconProps = {
@@ -158,35 +147,6 @@ function About() {
                 {job.description}
               </p>
             </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Recommendations — testimonial glass cards */}
-      <section>
-        <SectionHeading>Recommendations</SectionHeading>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {recommendations.map((rec) => (
-            <figure
-              key={rec.name}
-              className="flex flex-col rounded-2xl bg-white/5 p-6 shadow-lg ring-1 ring-white/10 backdrop-blur-sm"
-            >
-              <blockquote className="flex-1 leading-relaxed text-slate-100/90">
-                <span className="mr-1 text-3xl leading-none text-sky-400">
-                  &ldquo;
-                </span>
-                {rec.quote}
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3">
-                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-sky-500/30 text-sm font-semibold text-white ring-1 ring-white/20">
-                  {initials(rec.name)}
-                </div>
-                <div>
-                  <div className="font-semibold text-white">{rec.name}</div>
-                  <div className="text-sm text-slate-300">{rec.role}</div>
-                </div>
-              </figcaption>
-            </figure>
           ))}
         </div>
       </section>
