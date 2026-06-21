@@ -44,7 +44,7 @@ const SparkleIcon = () => (
 )
 
 const stats = [
-  { icon: TrophyIcon, title: 'Experience', subtitle: '3+ Years' },
+  { icon: TrophyIcon, title: 'Experience', subtitle: '2 Years' },
   { icon: FolderIcon, title: 'Projects', subtitle: '3 Featured' },
 ]
 
