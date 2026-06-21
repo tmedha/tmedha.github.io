@@ -6,27 +6,27 @@
 //  - repo:  full URL to the GitHub repository.
 //           TODO: these point to the GitHub profile — swap in each project's
 //           exact repository URL once available.
-const base = import.meta.env.BASE_URL
+const base =
+    import.meta.env.BASE_URL
 
-const projects = [
-  {
-    name: 'Manobal',
-    tech: 'Python · Cryptography · Docker',
-    image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha',
-  },
-  {
-    name: 'location2time',
-    tech: 'Python · REST API Integration',
-    image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha',
-  },
-  {
-    name: 'Search Engine',
-    tech: 'Python · BeautifulSoup · Flask',
-    image: `${base}project-placeholder.svg`,
-    repo: 'https://github.com/tmedha',
-  },
+const projects = [{
+        name: 'Manobal',
+        tech: 'Python · Cryptography · Docker',
+        image: `${base}project-placeholder.svg`,
+        repo: 'https://github.com/tmedha/manobal',
+    },
+    {
+        name: 'location2time',
+        tech: 'Python · REST API Integration',
+        image: `${base}project-placeholder.svg`,
+        repo: 'https://github.com/tmedha/location2time',
+    },
+    {
+        name: 'Search Engine',
+        tech: 'Python · BeautifulSoup · Flask',
+        image: `${base}project-placeholder.svg`,
+        repo: 'https://github.com/tmedha/info-retrieval-project',
+    },
 ]
 
 export default projects
