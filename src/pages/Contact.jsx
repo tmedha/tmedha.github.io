@@ -1,3 +1,6 @@
+import SectionHeading from '../components/SectionHeading.jsx'
+import { cardInteractive } from '../lib/styles.js'
+
 const contacts = [
   {
     label: 'Email',
@@ -32,10 +35,8 @@ const contacts = [
 function Contact() {
   return (
     <section className="flex flex-col items-center">
-      <h1 className="mb-4 text-4xl font-bold tracking-tight text-white drop-shadow-sm">
-        Contact Me
-      </h1>
-      <p className="mb-10 text-center text-lg text-slate-50/90">
+      <SectionHeading eyebrow="Get in touch">Contact Me</SectionHeading>
+      <p className="-mt-6 mb-10 text-center text-lg text-slate-300">
         Let's connect — find me here:
       </p>
 
@@ -46,18 +47,18 @@ function Contact() {
               href={href}
               target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel="noreferrer"
-              className="flex items-center gap-4 rounded-2xl bg-white/95 px-6 py-4 shadow-lg ring-1 ring-white/30 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-2xl"
+              className={`${cardInteractive} flex items-center gap-4 px-6 py-4`}
             >
               <svg
                 viewBox="0 0 24 24"
-                className="h-7 w-7 flex-shrink-0 fill-slate-800"
+                className="h-7 w-7 flex-shrink-0 fill-sky-300"
                 aria-hidden="true"
               >
                 {icon}
               </svg>
               <span className="flex flex-col">
-                <span className="font-semibold text-slate-900">{label}</span>
-                <span className="text-sm text-slate-600">{value}</span>
+                <span className="font-semibold text-white">{label}</span>
+                <span className="text-sm text-slate-400">{value}</span>
               </span>
             </a>
           </li>

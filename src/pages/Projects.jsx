@@ -1,12 +1,11 @@
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
+import SectionHeading from '../components/SectionHeading.jsx'
 
 function Projects() {
   return (
     <section>
-      <h1 className="mb-10 text-center text-4xl font-bold tracking-tight text-white drop-shadow-sm">
-        My Projects
-      </h1>
+      <SectionHeading eyebrow="My work">My Projects</SectionHeading>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (

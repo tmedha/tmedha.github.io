@@ -1,5 +1,9 @@
 import skills from '../data/skills.js'
 import experience from '../data/experience.js'
+import education from '../data/education.js'
+import SectionHeading from '../components/SectionHeading.jsx'
+import Timeline from '../components/Timeline.jsx'
+import { card } from '../lib/styles.js'
 
 // Assets in public/ must be prefixed with the Vite base URL so they resolve
 // under the /Portfolio/ sub-path on GitHub Pages.
@@ -7,7 +11,7 @@ const profilePhoto = `${import.meta.env.BASE_URL}myself.jpeg`
 
 // --- Stat-card icons (Heroicons outline) ---
 const iconProps = {
-  className: 'mx-auto h-7 w-7 text-sky-400',
+  className: 'h-6 w-6 text-sky-400',
   viewBox: '0 0 24 24',
   fill: 'none',
   stroke: 'currentColor',
@@ -31,7 +35,7 @@ const FolderIcon = () => (
 // Sparkle marker for skills — ties into the starfield aesthetic.
 const SparkleIcon = () => (
   <svg
-    className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-400"
+    className="h-4 w-4 flex-shrink-0 text-sky-400/80"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -48,14 +52,6 @@ const stats = [
   { icon: FolderIcon, title: 'Projects', subtitle: '3 Featured' },
 ]
 
-function SectionHeading({ children }) {
-  return (
-    <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-white drop-shadow-sm sm:text-4xl">
-      {children}
-    </h2>
-  )
-}
-
 function About() {
   return (
     <div className="space-y-24">
@@ -65,11 +61,14 @@ function About() {
         <img
           src={profilePhoto}
           alt="Medha"
-          className="h-48 w-48 flex-shrink-0 rounded-full object-cover shadow-xl ring-4 ring-white/40 md:h-60 md:w-60"
+          className="h-48 w-48 flex-shrink-0 rounded-full object-cover shadow-2xl shadow-black/30 ring-1 ring-white/15 md:h-60 md:w-60"
         />
 
         <div className="w-full text-center text-white md:text-left">
-          <h1 className="text-4xl font-bold tracking-tight drop-shadow-sm sm:text-5xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-400">
+            Get to know
+          </p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
             Hi, I'm Medha
           </h1>
           <p className="mt-2 text-lg font-medium text-sky-300">
@@ -79,18 +78,21 @@ function About() {
           {/* Quick stat cards */}
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {stats.map(({ icon: Icon, title, subtitle }) => (
-              <div
-                key={title}
-                className="rounded-2xl bg-white/5 p-5 text-center shadow-lg ring-1 ring-white/10 backdrop-blur-sm"
-              >
-                <Icon />
-                <div className="mt-3 font-semibold text-white">{title}</div>
-                <div className="mt-1 text-sm text-slate-300">{subtitle}</div>
+              <div key={title} className={`${card} flex items-center gap-4 p-5`}>
+                <span className="flex-shrink-0 rounded-xl bg-sky-400/10 p-2.5">
+                  <Icon />
+                </span>
+                <span className="text-left">
+                  <span className="block font-semibold text-white">{title}</span>
+                  <span className="block text-sm text-slate-400">
+                    {subtitle}
+                  </span>
+                </span>
               </div>
             ))}
           </div>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-50/90">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
             I'm a Software Engineer with a strong foundation in programming, web
             development, cloud technologies, and software deployment. I love
             building practical applications — integrating APIs, managing
@@ -102,13 +104,10 @@ function About() {
 
       {/* Skills — grouped glass cards */}
       <section>
-        <SectionHeading>Skills</SectionHeading>
+        <SectionHeading eyebrow="What I work with">Skills</SectionHeading>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
-            <div
-              key={group.category}
-              className="rounded-2xl bg-white/5 p-6 shadow-lg ring-1 ring-white/10 backdrop-blur-sm"
-            >
+            <div key={group.category} className={`${card} p-6`}>
               <h3 className="mb-6 text-center text-xl font-bold text-sky-300">
                 {group.category}
               </h3>
@@ -116,7 +115,7 @@ function About() {
                 {group.items.map((skill) => (
                   <div key={skill} className="flex items-center gap-2">
                     <SparkleIcon />
-                    <span className="font-medium text-white">{skill}</span>
+                    <span className="font-medium text-slate-200">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -125,30 +124,12 @@ function About() {
         </div>
       </section>
 
-      {/* Experience — timeline of glass cards */}
+      {/* Experience & Education — two-sided timeline */}
       <section>
-        <SectionHeading>Experience</SectionHeading>
-        <div className="mx-auto max-w-3xl space-y-6">
-          {experience.map((job) => (
-            <article
-              key={`${job.role}-${job.company}`}
-              className="rounded-2xl border-l-2 border-sky-400 bg-white/5 p-6 shadow-lg ring-1 ring-white/10 backdrop-blur-sm"
-            >
-              <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-                <h3 className="text-xl font-semibold text-white">
-                  {job.role} ·{' '}
-                  <span className="text-sky-300">{job.company}</span>
-                </h3>
-                <span className="text-sm font-medium text-slate-300">
-                  {job.period}
-                </span>
-              </div>
-              <p className="mt-3 leading-relaxed text-slate-200/90">
-                {job.description}
-              </p>
-            </article>
-          ))}
-        </div>
+        <SectionHeading eyebrow="My journey">
+          Experience &amp; Education
+        </SectionHeading>
+        <Timeline work={experience} education={education} />
       </section>
     </div>
   )

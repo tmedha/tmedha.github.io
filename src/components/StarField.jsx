@@ -1,28 +1,13 @@
 import { useEffect, useRef } from 'react'
 
 const CONFIG = {
-  count: 130,
-  color: '#ffffff',
-  opacity: 0.8,
-  maxSize: 2.4,
-  speed: 0.38,
+  count: 160,
+  // Most stars are white, a few have a cool/warm tint for a realistic sky.
+  colors: ['#ffffff', '#ffffff', '#ffffff', '#cfe8ff', '#bae6fd', '#fde8c8'],
+  maxSize: 1.7,
+  speed: 0.32,
   repulseDistance: 200,
   repulseDuration: 0.4, // seconds
-}
-
-function drawStar(ctx, cx, cy, r) {
-  const spikes = 5
-  const innerR = r * 0.45
-  ctx.beginPath()
-  for (let i = 0; i < spikes * 2; i++) {
-    const angle = (i * Math.PI) / spikes - Math.PI / 2
-    const radius = i % 2 === 0 ? r : innerR
-    const x = cx + Math.cos(angle) * radius
-    const y = cy + Math.sin(angle) * radius
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y)
-  }
-  ctx.closePath()
-  ctx.fill()
 }
 
 function makeParticle(w, h) {
@@ -30,7 +15,11 @@ function makeParticle(w, h) {
   return {
     x: Math.random() * w,
     y: Math.random() * h,
-    r: (0.5 + Math.random()) * CONFIG.maxSize * 0.5 + CONFIG.maxSize * 0.1,
+    r: 0.4 + Math.random() * CONFIG.maxSize,
+    color: CONFIG.colors[Math.floor(Math.random() * CONFIG.colors.length)],
+    baseAlpha: 0.25 + Math.random() * 0.6, // brightness variation
+    twinklePhase: Math.random() * Math.PI * 2,
+    twinkleSpeed: 0.4 + Math.random() * 1.6, // radians / second
     vx: Math.cos(angle) * CONFIG.speed,
     vy: Math.sin(angle) * CONFIG.speed,
     repulseVx: 0,
@@ -82,9 +71,6 @@ export default function StarField() {
       ctx.clearRect(0, 0, w, h)
       const now = performance.now() / 1000
 
-      ctx.fillStyle = CONFIG.color
-      ctx.globalAlpha = CONFIG.opacity
-
       particles.forEach((p) => {
         let vx = p.vx
         let vy = p.vy
@@ -104,9 +90,25 @@ export default function StarField() {
         if (p.y < 0) { p.y = 0; p.vy *= -1 }
         if (p.y > h) { p.y = h; p.vy *= -1 }
 
-        drawStar(ctx, p.x, p.y, p.r)
+        // Twinkle: oscillate brightness over time.
+        const twinkle = 0.65 + 0.35 * Math.sin(now * p.twinkleSpeed + p.twinklePhase)
+        ctx.globalAlpha = Math.min(1, p.baseAlpha * twinkle)
+        ctx.fillStyle = p.color
+
+        // Brighter/larger stars get a soft glow.
+        if (p.r > 1.1) {
+          ctx.shadowBlur = p.r * 4
+          ctx.shadowColor = p.color
+        } else {
+          ctx.shadowBlur = 0
+        }
+
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fill()
       })
 
+      ctx.shadowBlur = 0
       ctx.globalAlpha = 1
       animId = requestAnimationFrame(draw)
     }
