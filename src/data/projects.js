@@ -38,6 +38,12 @@ const projects = [
     repo: 'https://github.com/tmedha/manobal',
   },
   {
+    name: 'Cross-Timezone Alarms',
+    tech: 'Expo · React Native · TypeScript · Luxon',
+    image: `${base}projects/cross-timezone-alarms.png`,
+    repo: 'https://github.com/tmedha/cross-timezone-alarms',
+  },
+  {
     name: 'location2time',
     tech: 'Python · REST API Integration',
     image: `${base}project-placeholder.svg`,
