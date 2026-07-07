@@ -34,7 +34,7 @@ const projects = [
   {
     name: 'Manobal',
     tech: 'Python · Cryptography · Docker',
-    image: `${base}project-placeholder.svg`,
+    image: `${base}projects/manobal.gif`,
     repo: 'https://github.com/tmedha/manobal',
   },
   {
