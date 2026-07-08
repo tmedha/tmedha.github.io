@@ -32,6 +32,12 @@ const projects = [
     repo: 'https://github.com/tmedha/flower-companion',
   },
   {
+    name: 'Flappy Bird',
+    tech: 'JavaScript',
+    image: `${base}projects/flappy-bird.png`,
+    repo: 'https://tmedha.com/flappy-bird',
+  },
+  {
     name: 'Manobal',
     tech: 'Python · Cryptography · Docker',
     image: `${base}projects/manobal.gif`,
