@@ -14,6 +14,12 @@ const projects = [
     repo: 'https://github.com/tmedha/local-rag-system',
   },
   {
+    name: 'Cross-Timezone Alarms',
+    tech: 'Expo · React Native · TypeScript · Luxon',
+    image: `${base}projects/cross-timezone-alarms.png`,
+    repo: 'https://github.com/tmedha/cross-timezone-alarms',
+  },
+  {
     name: 'Verbatim',
     tech: 'Java Spring Boot · React · TypeScript',
     image: `${base}projects/verbatim.png`,
@@ -42,12 +48,6 @@ const projects = [
     tech: 'Python · Cryptography · Docker',
     image: `${base}projects/manobal.gif`,
     repo: 'https://github.com/tmedha/manobal',
-  },
-  {
-    name: 'Cross-Timezone Alarms',
-    tech: 'Expo · React Native · TypeScript · Luxon',
-    image: `${base}projects/cross-timezone-alarms.png`,
-    repo: 'https://github.com/tmedha/cross-timezone-alarms',
   },
   {
     name: 'location2time',
