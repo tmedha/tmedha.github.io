@@ -23,12 +23,6 @@ const liveLinks = [
     url: 'https://tmedha.com/wordle',
     repo: 'https://github.com/tmedha/wordle',
   },
-  {
-    name: 'aksharamukha.js',
-    blurb: 'Transliterate between Indic scripts in your browser.',
-    url: 'https://tmedha.com/aksharamukha.js',
-    repo: 'https://github.com/tmedha/aksharamukha.js',
-  },
 ]
 
 export default liveLinks

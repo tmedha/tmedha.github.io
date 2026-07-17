@@ -1,3 +1,4 @@
+import projects from '../data/projects.js'
 import skills from '../data/skills.js'
 import experience from '../data/experience.js'
 import education from '../data/education.js'
@@ -47,9 +48,11 @@ const SparkleIcon = () => (
   </svg>
 )
 
+// The project count is derived from the projects data, so adding a project
+// there keeps this card in sync on its own.
 const stats = [
   { icon: TrophyIcon, title: 'Experience', subtitle: '2 Years' },
-  { icon: FolderIcon, title: 'Projects', subtitle: '3 Featured' },
+  { icon: FolderIcon, title: 'Projects', subtitle: `${projects.length} Featured` },
 ]
 
 function About() {
