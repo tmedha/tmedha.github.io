@@ -8,6 +8,12 @@ const base = import.meta.env.BASE_URL
 
 const projects = [
   {
+    name: 'Macby',
+    tech: 'Swift · SwiftUI · AppKit · macOS',
+    image: `${base}projects/macby.png`,
+    repo: 'https://github.com/tmedha/macby',
+  },
+  {
     name: 'CloakedOracle',
     tech: 'Python · RAG · Ollama · Local-First',
     image: `${base}projects/cloakedoracle.png`,

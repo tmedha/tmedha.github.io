@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx'
 import StarField from './components/StarField.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
+import LiveLinks from './pages/LiveLinks.jsx'
 import Contact from './pages/Contact.jsx'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/live" element={<LiveLinks />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
